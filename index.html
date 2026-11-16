@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="جدارية التسامح الإلكترونية — جمعية الرعاية الإسلامية" />
+  <title>جدارية التسامح الإلكترونية | جمعية الرعاية الإسلامية</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <img
+        class="brand-logo"
+        src="assets/islamic-care-logo.png"
+        alt="شعار جمعية الرعاية الإسلامية"
+        width="120"
+        height="118"
+      />
+      <div class="brand-copy">
+        <p class="brand-org">جمعية الرعاية الإسلامية</p>
+        <h1 class="brand-title">جدارية التسامح: بصمة أثر ونقاء</h1>
+        <p class="brand-lead">مساحة رقمية نكتب فيها كلمات الرحمة والتآلف، وتبقى بصمة أثرٍ طيّب.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <nav class="view-toggle" role="tablist" aria-label="أقسام الجدارية">
+      <button type="button" class="toggle-btn is-active" role="tab" aria-selected="true" data-view="form" id="tab-form">
+        أضف بصمتك
+      </button>
+      <button type="button" class="toggle-btn" role="tab" aria-selected="false" data-view="wall" id="tab-wall">
+        جدارية الرسائل
+      </button>
+    </nav>
+
+    <section id="view-form" class="view view-form is-visible" role="tabpanel" aria-labelledby="tab-form">
+      <form id="tolerance-form" class="tolerance-form" novalidate>
+        <h2 class="section-heading">اترك رسالة تسامح</h2>
+        <p class="section-sub">شارك اسمك، اختر تصنيفك، واترك كلمة تُضيء الجدارية.</p>
+
+        <label class="field">
+          <span class="field-label">الاسم</span>
+          <input type="text" name="name" id="name" maxlength="60" required autocomplete="name" placeholder="اكتب اسمك الكريم" />
+        </label>
+
+        <fieldset class="field category-field">
+          <legend class="field-label">التصنيف</legend>
+          <div class="category-options">
+            <label class="chip">
+              <input type="radio" name="category" value="متبرعة كريمة" required />
+              <span>متبرعة كريمة</span>
+            </label>
+            <label class="chip">
+              <input type="radio" name="category" value="دارسة فاضلة" />
+              <span>دارسة فاضلة</span>
+            </label>
+            <label class="chip">
+              <input type="radio" name="category" value="عضو الفريق" />
+              <span>عضو الفريق</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <label class="field">
+          <span class="field-label">رسالة التسامح</span>
+          <textarea name="message" id="message" rows="4" maxlength="280" required placeholder="اكتب رسالة تسامح تُلهم من يقرأها…"></textarea>
+          <span class="char-count" id="char-count">0 / 280</span>
+        </label>
+
+        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">نشر على الجدارية</button>
+          <button type="button" class="btn-ghost" id="go-to-wall">عرض الجدارية</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="view-wall" class="view view-wall" role="tabpanel" aria-labelledby="tab-wall" hidden>
+      <div class="wall-toolbar">
+        <h2 class="section-heading">جدارية الرسائل</h2>
+        <p class="section-sub" id="wall-count">لا رسائل بعد — كن أول من يترك بصمة.</p>
+        <div class="wall-filters" role="group" aria-label="تصفية الرسائل">
+          <button type="button" class="filter-btn is-active" data-filter="all">الكل</button>
+          <button type="button" class="filter-btn" data-filter="متبرعة كريمة">متبرعات</button>
+          <button type="button" class="filter-btn" data-filter="دارسة فاضلة">دارسات</button>
+          <button type="button" class="filter-btn" data-filter="عضو الفريق">الفريق</button>
+        </div>
+      </div>
+      <div id="wall-grid" class="wall-grid" aria-live="polite"></div>
+      <p class="empty-wall" id="empty-wall" hidden>لا توجد رسائل في هذا التصنيف بعد.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© جمعية الرعاية الإسلامية — جدارية التسامح الإلكترونية</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

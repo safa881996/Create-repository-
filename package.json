@@ -1,0 +1,10 @@
+{
+  "name": "tolerance-wall",
+  "version": "1.0.0",
+  "private": true,
+  "description": "جدارية التسامح الإلكترونية — interactive Tolerance Wall for Islamic Care Society",
+  "scripts": {
+    "start": "python3 -m http.server 5173 --bind 127.0.0.1",
+    "preview": "python3 -m http.server 5173 --bind 127.0.0.1"
+  }
+}
